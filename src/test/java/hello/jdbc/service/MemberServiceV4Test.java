@@ -97,7 +97,7 @@ class MemberServiceV4Test {
 
     @Test
     @DisplayName("이체중 예외 발생")
-    void accountTransferEx() throws SQLException {
+    void accountTransferEx(){
         //given
         Member memberA = new Member(MEMBER_A, 10000);
         Member memberEx = new Member(MEMBER_EX, 10000);
