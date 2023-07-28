@@ -1,4 +1,4 @@
-package hello.jdbc.exception;
+package hello.jdbc.exception.basic;
 
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
@@ -13,13 +13,14 @@ public class CheckedTest {
     void checked_catch() {
         Service service = new Service();
         service.callCatch();
+        log.info("예외 처리 완료");
     }
 
     @Test
     void checked_throw() {
         Service service = new Service();
         // 이렇게 처리하면 예외를 처리하지 않았으므로 컴파일 에러가 발생함
-        // service.callThrow();
+//         service.callThrow();
         // 따라서 테스트에서는 아래처럼 처리를 해야함
         Assertions.assertThatThrownBy(() -> service.callThrow())
                 .isInstanceOf(MyCheckedException.class);
